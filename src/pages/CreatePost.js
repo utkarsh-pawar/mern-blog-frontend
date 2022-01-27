@@ -31,12 +31,12 @@ const CreatePost = () => {
       const token = userData.token;
       e.preventDefault();
       const post = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/api/v1/blogs/`,
+        `${process.env.REACT_APP_BASE_URL}/api/v1/blogs`,
         bodyFormData,
         { headers: { auth: token, "content-type": "multipart/form-data" } }
       );
       setPost(post);
-      console.log(post.data);
+      // console.log(post.data);
     } catch (err) {
       if (err.response) {
         console.log(err.response.data);
