@@ -1,0 +1,81 @@
+.register {
+  height: calc(100vh - 3rem);
+  background-color: rgb(187, 187, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-card {
+  background-color: aliceblue;
+  /* height: 30rem; */
+  width: 22rem;
+  padding: 1rem;
+  border-radius: 0.35rem;
+  box-shadow: 1px 3px 4px 3px rgba(0, 0, 0, 0.05);
+}
+
+.register-card > h1 {
+  font-size: xx-large;
+  font-weight: 200;
+}
+
+.register-card > p {
+  font-size: medium;
+}
+
+.register-card input {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100%;
+  margin: 0.5rem 0;
+  outline: none;
+  border: 1px solid lightgrey;
+  padding: 0.35rem;
+  font-size: small;
+  font-weight: 100;
+  border-radius: 0.2rem;
+}
+
+.register-card input:focus {
+  border: 1px solid gray;
+}
+
+.register-card button {
+  width: 100%;
+  padding: 0.5rem;
+  margin:0.5rem 0rem;
+  border-radius: 0.25rem;
+  border: 1px solid lightgray;
+  background-color: rgb(241, 95, 144);
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+.register-card button:hover {
+  background-color: rgb(209, 83, 125);
+}
+
+.register-card > span {
+  margin: 0.5rem 0;
+  width: 100%;
+  display: grid;
+  place-content: center;
+}
+
+.register-card__redirect{
+  display: flex;
+  flex-direction: column;
+}
+
+.register-card__redirect > div{
+  display: flex;
+}
+
+.register-card > div a {
+  margin-left: 0.35rem;
+  text-decoration: underline;
+}
+
+.register-card > div a:hover {
+  text-decoration: none;
+}

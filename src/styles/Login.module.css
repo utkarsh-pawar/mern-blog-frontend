@@ -1,0 +1,82 @@
+.login {
+    height: calc(100vh - 3rem);
+    background-color: rgb(187, 187, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-card {
+    background-color: aliceblue;
+    /* height: 25rem; */
+    width: 22rem;
+    padding: 1rem;
+    border-radius: 0.35rem;
+    box-shadow: 1px 3px 4px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .login-card > h1 {
+    font-size: xx-large;
+    font-weight: 200;
+  }
+  
+  .login-card > p {
+    font-size: medium;
+  }
+  
+  .login-card input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    margin: 0.5rem 0;
+    outline: none;
+    border: 1px solid lightgrey;
+    padding: 0.35rem;
+    font-size: small;
+    font-weight: 100;
+    border-radius: 0.2rem;
+  }
+  
+  .login-card input:focus {
+    border: 1px solid gray;
+  }
+  
+  .login-card button {
+    width: 100%;
+    margin:0.5rem 0rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid lightgray;
+    background-color: rgb(241, 95, 144);
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  .login-card button:hover {
+    background-color: rgb(209, 83, 125);
+  }
+  
+  .login-card span {
+    margin: 0.5rem 0;
+    width: 100%;
+    display: grid;
+    place-content: center;
+  }
+  
+  .login-card__redirect{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-card__redirect > div{
+    display: flex;
+  }
+  
+  .login-card > div a {
+    margin-left: 0.35rem;
+    text-decoration: underline;
+  }
+  
+  .login-card > div a:hover {
+    text-decoration: none;
+  }
+  

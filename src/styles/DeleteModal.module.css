@@ -1,0 +1,33 @@
+.modal {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 50;
+  left: 0;
+  padding: 0;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  position: fixed;
+  height: 100%;
+  width: 100vw;
+
+  background-color: rgba(0, 0, 0, 0.274);
+  overflow: hidden;
+}
+
+.modal-content {
+  width: 30rem;
+  height: 10rem;
+  background-color: white;
+  border: 1px solid black;
+  padding: 1rem;
+  z-index: 50;
+  position: absolute;
+}
