@@ -20,14 +20,14 @@ const Login = () => {
     e.preventDefault();
     try {
       const user = await axios.post(
-        "http://localhost:5000/api/v1/users/login",
+        `${process.env.REACT_APP_BASE_URL}/api/v1/users/login`,
         {
           email: email,
           password: password,
         }
       );
       dispatch(userActions.loggedIn(user.data));
-      console.log(user.data.token);
+     
       localStorage.setItem("token", user.data.token);
       navigate("/");
     } catch (err) {

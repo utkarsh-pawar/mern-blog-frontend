@@ -18,7 +18,7 @@ const AdminLogin = () => {
     try {
       e.preventDefault();
       const admin = await axios.post(
-        "http://localhost:5000/api/v1/users/adminlogin",
+        `${process.env.REACT_APP_BASE_URL}/api/v1/users/adminlogin`,
         {
           email,
           password,

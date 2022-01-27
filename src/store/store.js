@@ -9,6 +9,6 @@ const store = configureStore({
   },
 });
 
-export const baseURL = "http://localhost:5000/api/v1"
+export const baseURL = ""
 
 export default store;

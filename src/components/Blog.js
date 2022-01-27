@@ -46,7 +46,7 @@ const Blog = ({ userID, title, image, desc, createdAt }) => {
           )}
         </div>
         <div className={styles["blog-img"]}>
-          <img width={200} src={`http://localhost:5000/${image}`} alt="" />
+          <img width={200} src={`${process.env.BASE_URL}/${image}`} alt="" />
         </div>
       </div>
     </motion.div>

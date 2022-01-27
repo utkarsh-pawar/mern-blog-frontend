@@ -21,7 +21,7 @@ const Profile = () => {
     const fetchMyPosts = async () => {
       try {
         const data = await axios.get(
-          "http://localhost:5000/api/v1/blogs/posts",
+          `${process.env.REACT_APP_BASE_URL}/api/v1/blogs/posts`,
           { headers: { auth: token } }
         );
         console.log(data.data);

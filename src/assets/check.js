@@ -6,7 +6,7 @@ import { userActions } from "../store/userSlice";
 const checkLoggedIn = async (navigate, dispatch) => {
   const token = localStorage.getItem("token");
   const user = await axios.post(
-    "http://localhost:5000/api/v1/users/checkauth",
+    `${process.env.REACT_APP_BASE_URL}/api/v1/users/checkauth`,
     null,
     {
       headers: { "auth-token": token },

@@ -8,11 +8,13 @@ import { motion } from "framer-motion";
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
+    console.log();
+  
     //   const Blogs = await axios.get("http://localhost:5000/api/v1/blogs/");
     //   setBlogs(Blogs);
     // }, [blogs]);
     axios
-      .get("http://localhost:5000/api/v1/blogs/")
+      .get(`${process.env.REACT_APP_BASE_URL}/api/v1/blogs/`)
       .then((result) => {
         const data = result.data;
         // console.log(data);

@@ -14,6 +14,9 @@ import checkLoggedIn from "./assets/check";
 import CreatePost from "./pages/CreatePost";
 import { AnimatePresence } from "framer-motion";
 
+
+
+
 const baseURL = "http://localhost:5000/api/v1";
 
 const App = () => {

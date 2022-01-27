@@ -31,7 +31,7 @@ const CreatePost = () => {
       const token = userData.token;
       e.preventDefault();
       const post = await axios.post(
-        "http://localhost:5000/api/v1/blogs/",
+        `${process.env.REACT_APP_BASE_URL}/api/v1/blogs/`,
         bodyFormData,
         { headers: { auth: token, "content-type": "multipart/form-data" } }
       );
