@@ -11,8 +11,6 @@ const Blog = ({ userID, title, image, desc, createdAt }) => {
   const date = new Date(createdAt);
   const dateString = date.toDateString();
   const userData = useSelector((state) => state.user.userData);
-  console.log(userData);
-  console.log(userID);
   useEffect(() => {
     if (userData.userID === userID) {
       setDeletable(true);
@@ -46,7 +44,7 @@ const Blog = ({ userID, title, image, desc, createdAt }) => {
           )}
         </div>
         <div className={styles["blog-img"]}>
-          <img width={200} src={`${process.env.REACT_APP_BASE_URL}/${image}`} alt="" />
+          <img width={200} src={image} alt="" />
         </div>
       </div>
     </motion.div>
