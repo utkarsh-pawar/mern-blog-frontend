@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  /* min-height: 100vh; */
 }
 .post-container h1 {
   font-size: xx-large;
@@ -25,7 +26,7 @@
 .post-container form {
   display: flex;
   flex-direction: column;
-  margin:0rem 1rem ;
+  margin: 0rem 1rem;
   margin-bottom: 2rem;
 }
 
@@ -39,26 +40,42 @@ textarea {
   border-radius: 0.25rem;
 }
 .post-container form input:focus,
-textarea:focus{
-    border:1px solid gray;
+textarea:focus {
+  border: 1px solid gray;
 }
 
-.post-container form button{
-    align-self: flex-end;
-    border: 1px solid #284b63;
-    outline: none;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    margin-top: 1rem;
-    background-color: transparent;
-    font-size: medium;
-    transition: all 0.15s ease;
-    width: 10rem;
-
+.post-container form button {
+  align-self: flex-end;
+  border: 1px solid #284b63;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  background-color: transparent;
+  font-size: medium;
+  transition: all 0.15s ease;
+  width: 10rem;
 }
 
-.post-container form button:hover{
-    background-color: #284b63;
-    color: white;
+.post-container form button:hover {
+  background-color: #284b63;
+  color: white;
+}
+
+.center-msg {
+  min-height: 90vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+
+.center-msg button{
+  all:unset;
+  color: #3f94cc;
+  cursor: pointer;
 }

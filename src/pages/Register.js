@@ -5,6 +5,7 @@ import styles from "../styles/Register.module.css";
 import checkLoggedIn from "../assets/check";
 import { useDispatch } from "react-redux";
 import { motion } from "framer-motion";
+import { userActions } from "../store/userSlice";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
   useEffect(() => {
     checkLoggedIn(navigate, dispatch);
   }, []);
@@ -22,7 +24,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const user = await axios.post(
+      const regUser = await axios.post(
         `${process.env.REACT_APP_BASE_URL}/api/v1/users/signup`,
         {
           name: name,
@@ -30,15 +32,25 @@ const Register = () => {
           email: email,
         }
       );
-      console.log(user.data);
-      navigate("/");
+      if (regUser.data) {
+        const user = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/api/v1/users/login`,
+          {
+            email: email,
+            password: password,
+          }
+        );
+        dispatch(userActions.loggedIn(user.data));
+        localStorage.setItem("token", user.data.token);
+        navigate("/");
+      }
     } catch (err) {
       if (err.response) {
-        console.log(err.response.data);
+        setError(err.response.data);
       } else if (err.request) {
-        console.log(err.request);
+        setError(err.request);
       } else {
-        console.log(err.message);
+        setError(err.message);
       }
     }
   };
@@ -87,6 +99,7 @@ const Register = () => {
               <h4>Read Posts anonymously </h4>
               <Link to="/">Click Here</Link>
             </div>
+            <div>{error}</div>
           </div>
         </div>
       </section>

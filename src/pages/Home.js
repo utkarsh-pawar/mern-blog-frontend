@@ -7,12 +7,8 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
+  // const [blogCount, setBlogCount] = useState();
   useEffect(() => {
-    console.log();
-  
-    //   const Blogs = await axios.get("http://localhost:5000/api/v1/blogs/");
-    //   setBlogs(Blogs);
-    // }, [blogs]);
     axios
       .get(`${process.env.REACT_APP_BASE_URL}/api/v1/blogs/`)
       .then((result) => {

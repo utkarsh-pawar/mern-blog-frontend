@@ -5,6 +5,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import { motion } from "framer-motion";
 import DeleteModal from "./DeleteModal";
 
+
 const Blog = ({ userID, title, image, desc, createdAt }) => {
   const [deletable, setDeletable] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -16,7 +17,10 @@ const Blog = ({ userID, title, image, desc, createdAt }) => {
       setDeletable(true);
     }
   }, []);
+  
   const singleBlogHandler = () => {};
+
+
 
   const deleteHandler = (e) => {
     e.preventDefault();
