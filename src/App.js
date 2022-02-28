@@ -13,6 +13,7 @@ import AdminPanel from "./pages/AdminPanel";
 import checkLoggedIn from "./assets/check";
 import CreatePost from "./pages/CreatePost";
 import { AnimatePresence } from "framer-motion";
+import ImgZoom from "./components/ImgZoom";
 
 
 
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/admin/data" element={<AdminPanel />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/post" element={<CreatePost />} />
+          <Route path="/test" element={<ImgZoom />} />
         </Routes>
       </AnimatePresence>
     </>

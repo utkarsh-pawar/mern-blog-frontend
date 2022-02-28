@@ -8,11 +8,12 @@
   transition: all 0.15s ease;
 }
 
-.blog:hover {
+/* .blog:hover {
   transform: scale(1.005);
-}
+} */
 
 .blog-desc {
+  flex: 0.65;
 }
 
 .blog-delete {
@@ -21,6 +22,7 @@
   /* margin: 0.5rem; */
   /* padding: 0.5rem; */
   /* border: 1px solid black; */
+  transform: rotate(0);
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
@@ -28,12 +30,39 @@
   justify-content: center;
   align-items: center;
   transition: all 0.15s ease;
+  margin: 5px 10px;
 }
 
-.blog-delete:hover{
+/* .blog-delete:hover {
   background-color: rgba(107, 2, 2, 0.76);
   color: white;
   transform: scale(1.1);
+} */
+
+.blog-delete:hover {
+/* transform: scale(2); */
+  background-color: rgba(107, 2, 2, 0.76);
+  color: white;
+  animation-name: shake ;
+  animation-duration: 0.2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  25% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
 }
 
 .blog-desc > h1 {
@@ -46,4 +75,12 @@
 }
 
 .blog-img {
+  flex: 0.33;
+  width: 250px;
+  height: 180px;
+  background-position: center !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-clip: content-box;
+  cursor: pointer;
 }

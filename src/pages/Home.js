@@ -4,10 +4,11 @@ import axios from "axios";
 import Blog from "../components/Blog";
 import Header from "../components/Header";
 import { motion } from "framer-motion";
+import { FaAngleDown } from "react-icons/fa";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
-  // const [blogCount, setBlogCount] = useState();
+  const [blogCount, setBlogCount] = useState(10);
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_BASE_URL}/api/v1/blogs/`)
@@ -15,11 +16,20 @@ const Home = () => {
         const data = result.data;
         // console.log(data);
         setBlogs(data);
+        console.log(blogs);
       })
       .catch((err) => {
         console.log(err.message);
       });
   }, []);
+
+  const countIncrementHandler = () => {
+    if (blogCount >= blogs.length) {
+      return;
+    }
+    setBlogCount(blogCount + 10);
+
+  };
 
   return (
     <motion.div
@@ -38,18 +48,27 @@ const Home = () => {
             </div>
           </div>
           <div className={styles["home-blogs"]}>
-            {blogs.map((blog) => {
-              return (
-                <Blog
-                  userID={blog.userID}
-                  key={blog._id}
-                  title={blog.title}
-                  image={blog.img}
-                  createdAt={blog.createdAt}
-                  desc={blog.content}
-                />
-              );
-            })}
+            {blogs
+              .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+              .slice(0, blogCount)
+              .map((blog) => {
+                return (
+                  <Blog
+                    userID={blog.userID}
+                    key={blog._id}
+                    title={blog.title}
+                    image={blog.img}
+                    createdAt={blog.createdAt}
+                    desc={blog.content}
+                    blogId = {blog._id}
+                  />
+                );
+              })}
+            <div className={styles["blog-count"]}>
+              <div className={styles["blog-count__icon"]}>
+                <FaAngleDown onClick={countIncrementHandler} />
+              </div>
+            </div>
           </div>
         </div>
       </div>

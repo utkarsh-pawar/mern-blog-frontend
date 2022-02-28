@@ -30,4 +30,35 @@
   padding: 1rem;
   z-index: 50;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: medium;
+}
+
+.modal-content button {
+  margin: 0px 5px;
+  padding: 5px;
+  border-radius: 0.25rem;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background-color: #8a0000;
+  border: 1px solid #8A0000;
+  color: white;
+  font-weight: 400;
+}
+
+.confirm-btn:hover {
+  background-color: white;
+  /* border: 1px solid #8a0000; */
+  color: #8a0000;
+  font-weight: 500;
+}
+
+.cancel-btn{
+  border: 1px solid #353535;
+  background-color: white;
 }

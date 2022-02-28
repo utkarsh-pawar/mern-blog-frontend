@@ -50,18 +50,21 @@ const Profile = () => {
         <div className={styles["profile-container"]}>
           <div className={styles["profile-posts"]}>
             <h1>Recent Posts</h1>
-            {posts.map((post) => {
-              return (
-                <Blog
-                  key={post._id}
-                  userID={post.userID}
-                  title={post.title}
-                  desc={post.content}
-                  createdAt={post.createdAt}
-                  image={post.img}
-                />
-              );
-            })}
+            {posts
+              .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+              .map((post) => {
+                return (
+                  <Blog
+                    key={post._id}
+                    userID={post.userID}
+                    title={post.title}
+                    desc={post.content}
+                    createdAt={post.createdAt}
+                    image={post.img}
+                    blogId = {post._id}
+                  />
+                );
+              })}
           </div>
         </div>
       </div>
